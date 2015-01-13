@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PlayingWithFragments</string>
+    <string name="title_activity_seperate_activity1">SeperateActivity1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_seperate_activity2">SeperateActivity2</string>
+    <string name="title_activity_delete">Delete</string>
+    <string name="seperate_activity">Seperate Activity</string>
+    <string name="button_handling">ButtonHandling</string>
+    <string name="click_count">Click count: </string>
+    <string name="push_me">Push me!</string>
+
+</resources>
