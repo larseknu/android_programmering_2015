@@ -1,15 +1,25 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
-    <View
-        android:layout_width="180dp"
-        android:layout_height="240dp"
-        android:background="@color/purple" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_smileys"
+        android:onClick="toggleSmileys"/>
 
-    <View
-        android:layout_width="240dp"
-        android:layout_height="180dp"
-        android:background="@color/blue" />
+    <ViewStub
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/happySmileysViewStub"
+        android:layout="@layout/happy_smileys"/>
 
-</FrameLayout>
+    <include
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/happySmileys"
+        android:visibility="gone"
+        layout="@layout/happy_smileys"/>
+
+</LinearLayout>

@@ -2,6 +2,7 @@ package com.capgemini.larseknu.playingwithlayouts;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
