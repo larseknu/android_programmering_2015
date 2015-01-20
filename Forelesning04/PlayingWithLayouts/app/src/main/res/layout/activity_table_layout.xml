@@ -1,0 +1,28 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <TableRow>
+        <TextView
+            android:text="@string/one"
+            android:background="@color/purple" />
+        <TextView
+            android:text="@string/the_shawshank_redemption"
+            android:background="@color/blue" />
+        <TextView
+            android:text="@string/score9_3"
+            android:background="@color/purple" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="@string/two"
+            android:background="@color/blue" />
+        <TextView
+            android:text="@string/despicable_me"
+            android:background="@color/purple" />
+        <TextView
+            android:text="@string/score7_6"
+            android:background="@color/blue" />
+    </TableRow>
+
+</TableLayout>
