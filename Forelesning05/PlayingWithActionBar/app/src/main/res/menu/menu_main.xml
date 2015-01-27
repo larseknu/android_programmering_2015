@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/menu_option_1"
+        android:icon="@android:drawable/ic_menu_mapmode"
+        android:title="@string/action_option_1"
+        android:showAsAction="always|withText" />
+    <item
+        android:id="@+id/menu_option_2"
+        android:icon="@android:drawable/ic_menu_rotate"
+        android:title="@string/action_option_2"
+        android:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/menu_option_3"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/action_option_3"
+        android:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/menu_exit"
+        android:icon="@android:drawable/ic_lock_power_off"
+        android:title="@string/action_exit"
+        android:showAsAction="never"
+        android:onClick="onExitClicked"/>
+</menu>
