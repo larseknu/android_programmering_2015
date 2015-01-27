@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PlayingWithTabs</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="tabbed_activity">Tabbed Activity</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="content_desc_xkcd_iphone_droid">http://xkcd.com/662/</string>
+    <string name="content_desc_xkcd_good_code">http://xkcd.com/844/</string>
+    <string name="list_activity">List Activity</string>
+    <string name="title_activity_list">List Navigation</string>
+    <string name="action_search">Search</string>
+
+</resources>

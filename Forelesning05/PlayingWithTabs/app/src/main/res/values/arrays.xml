@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tabName">
+        <item>iPhone or Droid</item>
+        <item>Good Code</item>
+    </string-array>
+    <string-array name="tabFragmentNames">
+        <item>com.capgemini.larseknu.playingwithtabs.iPhoneOrDroidFragment</item>
+        <item>com.capgemini.larseknu.playingwithtabs.GoodCodeFragment</item>
+    </string-array>
+</resources>
