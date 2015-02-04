@@ -16,7 +16,7 @@ Eksempler til kurset i Android-programmering ved Høgskolen i Østfold
 ## Forelesning 04
 * Layouts
 
-## Lecture 03
+## Forelesning 03
 * Fragments
 
 ## Forelesning 02
