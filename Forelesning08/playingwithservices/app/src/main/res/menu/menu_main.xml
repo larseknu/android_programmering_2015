@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+    <item android:id="@+id/do_work"
+        android:title="@string/do_work"
+        android:icon="@android:drawable/stat_sys_download"
+        android:showAsAction="ifRoom" />
+
+    <item android:id="@+id/do_more_work"
+        android:title="@string/start_worker_service"
+        android:icon="@android:drawable/stat_sys_upload"
+        android:showAsAction="ifRoom" />
+</menu>
