@@ -59,16 +59,14 @@ public class ShowListActivity extends ListActivity {
 	
 	public void itemAddOnClick(MenuItem item) {
 		CreateShow createShow = new CreateShow();
-		createShow.execute();
+		createShow.execute(getResources().getStringArray(R.array.shows));
 	}
 	
-	private class CreateShow extends AsyncTask<Void, Void, Show> {
+	private class CreateShow extends AsyncTask<String, Void, Show> {
 
 		@Override
-		protected Show doInBackground(Void... params) {
-			String[] shows = getResources().getStringArray(R.array.shows);
-			
-			Show show = dataSource.createShow(shows[showNumber++%9], new Random().nextInt(15)+2000, null);
+		protected Show doInBackground(String... shows) {
+			Show show = dataSource.createShow(shows[showNumber++%shows.length], new Random().nextInt(15)+2000, null);
 			dataSource.createEpisode(show.getId(), "Pilot", 1, 1, "Brilliant physicist roommates Leonard and Sheldon meet their new neighbor Penny, who begins showing them that as much as they know about science, they know little about actual living.");
 			dataSource.createEpisode(show.getId(), "The Big Bran Hypothesis", 2, 1, "Brilliant physicist roommates Leonard and Sheldon meet their new neighbor Penny, who begins showing them that as much as they know about science, they know little about actual living.");
 			
@@ -78,15 +76,15 @@ public class ShowListActivity extends ListActivity {
 		@Override
 		protected void onPostExecute(Show show) {
 
-			ArrayAdapter<Show> adapter = (ArrayAdapter<Show>) getListAdapter();
+            ShowListAdapter adapter = (ShowListAdapter) getListAdapter();
 			
 			adapter.add(show);
 		}
 	}
 	
 	public void itemDeleteOnClick(MenuItem item) {
-		@SuppressWarnings("unchecked")
-		ArrayAdapter<Show> adapter = (ArrayAdapter<Show>) getListAdapter();
+
+        ShowListAdapter adapter = (ShowListAdapter) getListAdapter();
 		
 		while (adapter.getCount() > 0) {
 			Show show = adapter.getItem(0);
