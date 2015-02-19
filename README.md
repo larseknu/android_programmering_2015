@@ -3,6 +3,11 @@ Android-programmering 2015
 
 Eksempler til kurset i Android-programmering ved Høgskolen i Østfold
 
+## Forelesning 08
+* SQLite
+
+## Forelesning 08
+* Servicer
 
 ## Forelesning 07
 * Tråder
