@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">playingwithgooglemaps</string>
+    <string name="title_activity_maps">Playing With Google Maps</string>
+    <string name="kitty_attack">Kitty Attack</string>
+    <string name="draw_route">Draw Route</string>
+    <string name="kittens_remove">Remove Kittens</string>
+
+    <string name="normal">Normal</string>
+    <string name="hybrid">Hybrid</string>
+    <string name="satellite">Satellite</string>
+    <string name="terrain">Terrain</string>
+    <string name="none">None</string>
+</resources>
