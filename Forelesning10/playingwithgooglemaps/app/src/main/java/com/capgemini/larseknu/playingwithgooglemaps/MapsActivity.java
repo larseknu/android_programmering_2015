@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Property;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -57,7 +58,7 @@ public class MapsActivity extends Activity implements GoogleMap.OnMapLongClickLi
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
 
-        mKittyMarkers = new ArrayList<Marker>();
+        mKittyMarkers = new ArrayList<>();
         mMapDirection = new GMapV2Direction();
 
         if (savedInstanceState == null) {
@@ -65,6 +66,14 @@ public class MapsActivity extends Activity implements GoogleMap.OnMapLongClickLi
             mMap.moveCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(HIOF, 13, 0, 0)));
             // Animate the camera from the position to Fredrikstad Kino over a duration of 2 seconds
             mMap.animateCamera(CameraUpdateFactory.newLatLng(FREDRIKSTAD), 2000, null);
+        }
+        else {
+            // We get our KittenLocation from the savedInstance bundle
+            KittenLocation kittenLocation = savedInstanceState.getParcelable("found_kitten");
+            if (kittenLocation != null) {
+                // We add the kitten marker to the map
+                addKittenMarker(kittenLocation.getLatLng(), "Found Kitten");
+            }
         }
 
         Spinner spinner = (Spinner) findViewById(R.id.layers_spinner);
@@ -111,11 +120,30 @@ public class MapsActivity extends Activity implements GoogleMap.OnMapLongClickLi
     }
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+        // We want to save one of the kittens if one exists
+        if (!mKittyMarkers.isEmpty()) {
+            // Gets the first kitten
+            Marker kittyMarker = mKittyMarkers.get(0);
+            // Instantiate KittenLocation, which is a parcelable class, based on data from the marker
+            KittenLocation kittenLocation = new KittenLocation(kittyMarker.getTitle(), new LatLng(kittyMarker.getPosition().latitude, kittyMarker.getPosition().longitude));
+            // Put the KittenLocation data into the bundle
+            outState.putParcelable("found_kitten", kittenLocation);
+        }
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
     public void onMapLongClick(LatLng latLng) {
         addKittenMarker(latLng);
     }
 
     private void addKittenMarker(LatLng kittenLocation) {
+        addKittenMarker(kittenLocation, "Kitty Invasion");
+    }
+
+    private void addKittenMarker(LatLng kittenLocation, String snippet) {
         // Get a kittenIcon from the drawable resources. Must be named "kitten_0X", where X is a number.
         BitmapDescriptor kittenIcon = BitmapDescriptorFactory.fromResource(getResources().getIdentifier("kitten_0" + (mKittyCounter%3+1), "drawable", this.getPackageName()));
         // One more kitten is to be added
@@ -123,7 +151,7 @@ public class MapsActivity extends Activity implements GoogleMap.OnMapLongClickLi
         // Create all the marker options for the kitty marker
         MarkerOptions markerOptions = new MarkerOptions().position(kittenLocation)
                 .title("Mittens the " + mKittyCounter + ".")
-                .snippet("Kitty Invasion")
+                .snippet(snippet)
                 .icon(kittenIcon);
         // Add the marker to the map
         Marker kittyMarker = mMap.addMarker(markerOptions);
