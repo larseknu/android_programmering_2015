@@ -15,7 +15,7 @@
         android:text="@string/ok"
         android:layout_below="@id/editText"
         android:layout_alignParentRight="true" />
-
+
     <Button
         android:id="@+id/cancel_button"
         android:layout_width="wrap_content"
